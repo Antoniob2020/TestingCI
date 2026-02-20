@@ -1,4 +1,4 @@
-#Passwor Validator (Unit Testing)
+# Passwor Validator (Unit Testing)
 
 
 ALLOWED_SPECIALS = set("!@#$%")
@@ -17,11 +17,11 @@ def validate_password(pw: str) -> bool:
     if " " in pw:
         return False
 
-    # R2: at least 1 letter and at least 1 digit
-    has_letter = any(ch.isalpha() for ch in pw)
-    has_digit = any(ch.isdigit() for ch in pw)
-    if not (has_letter and has_digit):
-        return False
+    # # R2: at least 1 letter and at least 1 digit
+    # has_letter = any(ch.isalpha() for ch in pw)
+    # has_digit = any(ch.isdigit() for ch in pw)
+    # if not (has_letter and has_digit):
+    #     return False
 
     # R4: at least 1 allowed special, and (implicitly) specials must be from the set
     # Our tests enforce that ^ should fail, meaning we treat non-allowed specials as invalid.
@@ -37,3 +37,5 @@ def validate_password(pw: str) -> bool:
                 return False
 
     return True
+
+
